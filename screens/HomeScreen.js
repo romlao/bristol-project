@@ -22,13 +22,13 @@ export default function HomeScreen() {
 
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
-
+{/* 
           <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
             <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
+          </View> */}
 
           <Text style={styles.getStartedText}>
-            Bristol Project Page 1
+            Bristol Project
           </Text>
         </View>
 
@@ -39,13 +39,13 @@ export default function HomeScreen() {
         </View> */}
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
+      {/* <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
         <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -56,16 +56,10 @@ HomeScreen.navigationOptions = {
 
 function DevelopmentModeNotice() {
   if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
 
     return (
       <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use useful development
-        tools. {learnMoreButton}
+        Development mode is enabled
       </Text>
     );
   } else {

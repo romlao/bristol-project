@@ -4,6 +4,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import CardScreen from '../screens/CardScreen';
+import PeopleScreen from '../screens/PeopleScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -20,16 +21,16 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Accueil',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-home" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="People"
+        component={PeopleScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Autour de moi',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-people" />,
         }}
       />
       <BottomTab.Screen
@@ -37,7 +38,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={CardScreen}
         options={{
           title: 'Ma carte',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-cafe" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-card" />,
         }}
       />
     </BottomTab.Navigator>
@@ -49,9 +50,9 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
+      return 'Accueil';
+    case 'People':
+      return 'Autour de moi';
     case 'Card':
       return 'Ma Carte de visite';
   }
