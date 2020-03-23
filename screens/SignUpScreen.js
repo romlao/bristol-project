@@ -37,10 +37,10 @@ export default class SignUpScreen extends React.Component {
             
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.card}>
-                <Image
-                    style={{height: 200, width: '100%'}}
-                    source={require('../assets/images/swowp_logo_card.png')}
-                />
+                    <Image
+                        style={{height: 200, width: '100%'}}
+                        source={require('../assets/images/swowp_logo_card.png')}
+                    />
                 </View>
 
                 <View>

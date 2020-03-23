@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
 import SignUpScreen from './screens/SignUpScreen';
+import EditScreen from './screens/EditScreen';
 
 const Stack = createStackNavigator();
 
@@ -54,7 +55,8 @@ export default function App(props) {
           {/* <Stack.Navigator>
             <Stack.Screen name="Root" component={SignUpScreen} />
           </Stack.Navigator> */}
-          <SignUpScreen></SignUpScreen>
+          {/* <SignUpScreen></SignUpScreen> */}
+          <EditScreen></EditScreen>
         </NavigationContainer>
       </View>
 
