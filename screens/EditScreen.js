@@ -26,22 +26,10 @@ export default class EditScreen extends React.Component {
         };
     }
 
-    _onFocus() {
-
-    }
-
-
     render() {
-
         return (
-            
             <View style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.topCard}>
-                    {/* <Button style={styles.validateButton}
-                        title="Valider"
-                        // onPress={() => this.setState({step: 2})}
-                        color={"#ff5252"}
-                    /> */}
                     <TouchableOpacity
                         style={styles.button}
                         onPress={this.onPress}
@@ -168,7 +156,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         padding: 10,
-        marginHorizontal: 100
+        marginHorizontal: 120
     },
     buttonText: {
         color: '#5b5b5b',
@@ -176,15 +164,16 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     titleSociety: {
-        fontSize: 30,
+        fontSize: 25,
         color: '#2196f3',
-        textTransform: 'uppercase'
-        
+        textTransform: 'uppercase',
+        marginBottom: 10
     },
     name: {
-        fontSize: 25,
+        fontSize: 22,
         color: 'gray',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        marginBottom: 30
     },
     function: {
         color: '#2196f3',
