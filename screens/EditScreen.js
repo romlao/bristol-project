@@ -26,16 +26,25 @@ export default class EditScreen extends React.Component {
         };
     }
 
+    get isValid(){
+        var valid = true;
+        valid = valid && this.state.society;
+        valid = valid && this.state.name;
+        valid = valid && this.state.function;
+        valid = valid && this.state.mobile;
+        valid = valid && this.state.email;
+        return valid;
+    }
+
     render() {
         return (
             <View style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.topCard}>
                     <TouchableOpacity
-                        style={styles.button}
-                        onPress={this.onPress}
-                        disabled={true}
+                        style={this.isValid ? styles.buttonValid : styles.buttonDisable}
+                        onPress={this._onPressButton}
                     >
-                        <Text style={styles.buttonText}> Valider </Text>
+                        <Text style={this.isValid ? styles.buttonValidText : styles.buttonDisableText}> Valider </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[styles.card, styles.firstCard]}>
@@ -112,6 +121,7 @@ export default class EditScreen extends React.Component {
                     </View>
                     
                 </View>
+                
             </View>
         )
     }
@@ -127,7 +137,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF'
     },
     topCard: {
-        marginTop: 40,
+        marginTop: 50
     },
     card: {
         marginHorizontal: 30,
@@ -136,7 +146,7 @@ const styles = StyleSheet.create({
     },
     firstCard: {
         flex: 1,
-        marginTop: 30,
+        marginTop: 20,
         marginBottom: 0,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
@@ -150,7 +160,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 40,
         backgroundColor: '#5eaff4',
     },
-    button: {
+    buttonDisable: {
         backgroundColor: 'transparent',
         borderColor: '#5b5b5b',
         borderWidth: 1,
@@ -158,8 +168,19 @@ const styles = StyleSheet.create({
         padding: 10,
         marginHorizontal: 120
     },
-    buttonText: {
+    buttonValid: {
+        backgroundColor: '#ff5252',
+        alignItems: 'center',
+        padding: 10,
+        marginHorizontal: 120
+    },
+    buttonDisableText: {
         color: '#5b5b5b',
+        textTransform: 'uppercase',
+        fontSize: 18
+    },
+    buttonValidText: {
+        color: 'white',
         textTransform: 'uppercase',
         fontSize: 18
     },
